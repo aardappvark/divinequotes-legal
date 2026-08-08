@@ -31,6 +31,7 @@
             nav .brand { margin-right: 0; width: 100%; text-align: center; }
         }
     </style>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
     <nav>
@@ -47,7 +48,7 @@
 
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: 22 February 2026</p>
+        <p class="last-updated">Last updated: 8 August 2026</p>
 
         <div class="important-box">
             <p><span class="highlight">Divine Quotes Sol does not collect, store, transmit, or process any personal data or personally identifiable information (PII).</span> We have no servers, no databases, no analytics, no tracking, and no advertising. Your privacy is absolute.</p>
@@ -66,7 +67,6 @@
             <li>Usage analytics or behavioural data</li>
             <li>Crash reports or diagnostic data</li>
             <li>Cookies, local storage tokens, or tracking pixels</li>
-            <li>Wallet addresses or blockchain transaction history</li>
             <li>Biometric data of any kind</li>
             <li>Contacts, calendar, photos, or any other device data</li>
             <li>Religious preferences, faith affiliation, or spiritual practice data</li>
@@ -88,8 +88,11 @@
             <li><span class="highlight">Qibla compass direction</span> &mdash; to calculate the bearing toward Makkah from your current location</li>
         </ul>
         <div class="important-box">
-            <p>Location data is processed <strong>entirely on your device</strong>. It is never transmitted to any server, never stored persistently, and never shared with any third party. Location access is optional and the app will function without it (prayer times and compass features will be unavailable).</p>
+            <p>Your coordinates are used on your device, are never sent to us, are not stored persistently, and are not shared. Location is also used to determine your country for sanctions screening: the app first reads your SIM and mobile-network country codes, and only if those are unavailable does it ask Android's own geocoding service to convert your approximate position into a country code &mdash; a platform request handled by Android (on most devices by Google), not by us. Location access is optional and the app will function without it (prayer times and compass features will be unavailable).</p>
         </div>
+
+        <h3>6.1 Permissions Declared</h3>
+        <p>The App declares INTERNET, ACCESS_COARSE_LOCATION, RECEIVE_BOOT_COMPLETED, POST_NOTIFICATIONS and SCHEDULE_EXACT_ALARM. The shipped package additionally contains WAKE_LOCK, ACCESS_NETWORK_STATE and FOREGROUND_SERVICE (declared by AndroidX WorkManager, which runs the daily quote notification and widget refresh) and REORDER_TASKS (declared by the Solana Mobile Wallet Adapter library). The App itself starts no foreground service. If your device does not grant the exact-alarm permission, prayer reminders are scheduled inexactly and may arrive a few minutes late.</p>
 
         <h2>7. Device Sensor Access</h2>
         <p>Divine Quotes Sol may access your device's magnetometer (compass sensor) and accelerometer for the sole purpose of providing compass heading functionality for the Qibla direction feature. Sensor data is processed entirely on-device, is never recorded, and is never transmitted.</p>
@@ -107,16 +110,17 @@
         <p>Divine Quotes Sol uses Sign In With Solana (SIWS) for wallet authentication. This process involves signing a message with your wallet to verify ownership. No personal data is collected during this process. The signed message contains only a domain identifier and a human-readable statement of purpose.</p>
 
         <h2>10. Data Storage</h2>
-        <p>Any user preferences (such as selected faith traditions, theme preferences, or notification settings) are stored exclusively in local device storage (SharedPreferences) on your device. This data never leaves your device and is deleted when you uninstall the app.</p>
+        <p>Your preferences (selected faith traditions, notification frequency, compass target, author-date display), your saved favourites and your local usage streak are stored in local device storage (SharedPreferences). Wallet data is stored using Android EncryptedSharedPreferences where available, with a fallback to standard SharedPreferences.</p>
+        <p>If Android Backup is enabled on your device, the App's settings and progress data are included in your device's encrypted Google backup, survive uninstalling the App, and may be restored when you reinstall. Wallet data is always excluded from backup. You can exclude the App from backup in Android Settings or delete the backup from your Google account.</p>
 
         <h2>11. Third-Party Services</h2>
         <p>Divine Quotes Sol does not integrate with any third-party services that collect user data. The app does not contain any third-party SDKs for analytics, advertising, social media, or data collection.</p>
 
         <h2>12. Children's Privacy</h2>
-        <p>Since Divine Quotes Sol collects no data whatsoever from any user, no special provisions for children's data are necessary. The app is safe for users of all ages. We comply with the Australian Privacy Act 1988, the US Children's Online Privacy Protection Act (COPPA), and the EU General Data Protection Regulation (GDPR) provisions relating to minors.</p>
+        <p>The app has no accounts, no advertising and no analytics, and we receive no data about any user. We comply with the Australian Privacy Act 1988, the US Children's Online Privacy Protection Act (COPPA), and the EU General Data Protection Regulation (GDPR) provisions relating to minors.</p>
 
         <h2>13. International Compliance</h2>
-        <p>Because Divine Quotes Sol collects no personal data, it is inherently compliant with:</p>
+        <p>ADappvark operates no backend and receives no personal data from the App, so there is no personal data for us to disclose, correct, export or delete. Deleting the App (and, if Android Backup is enabled, removing its backup from your Google account) removes all data it holds. This design is intended to satisfy:</p>
         <ul>
             <li>Australian Privacy Act 1988 and Australian Privacy Principles (APPs)</li>
             <li>EU General Data Protection Regulation (GDPR)</li>
